@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+  --red:#CC0000;
+  --lightBlue: #0099CC;
+  --green: #007E33;
+  --purple:#9933CC;
+  --black: #1C2331;
+}
+
+*,
+*:before,
+*:after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+
+  font-size: 16px;
+}

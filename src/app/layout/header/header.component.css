@@ -1,0 +1,42 @@
+.nav{
+  background: var(--black);
+
+  height: 3.3em;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-logo{
+  cursor: pointer;
+  padding-left: .7em;
+}
+
+.icon-logo > img{
+  height: 2.2em;
+  width: 2.2em;
+}
+
+.navigation{
+  padding-right: 0.7em;
+}
+
+.btn{
+  border: 0;
+  background: none;
+  cursor: pointer;
+
+  padding: .5em;
+  font-size: .9em;
+
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 1em;
+}
+
+.btn:hover{
+  background: var(--red);
+  color:white;
+}

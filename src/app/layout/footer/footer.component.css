@@ -1,0 +1,10 @@
+.footer-info{
+  background: var(--black);
+
+  display: flex;
+  justify-content: center;
+}
+
+.autor-text{
+  color: white;
+}

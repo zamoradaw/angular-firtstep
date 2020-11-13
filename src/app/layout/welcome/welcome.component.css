@@ -1,0 +1,9 @@
+.welcome{
+  margin: 0;
+
+  height: 82.2vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

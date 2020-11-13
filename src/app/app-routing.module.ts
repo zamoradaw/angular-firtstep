@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { Page404Component } from '@layout/page404/page404.component';
+import { WelcomeComponent } from '@layout/welcome/welcome.component';
 
-const routes: Routes = [];
+import { LC_DELECTUS } from '@data/constants/loadchildren-module';
+
+const routes: Routes = [
+  {path: '', component: WelcomeComponent},
+  {path: 'delectus', loadChildren: LC_DELECTUS},
+  {path: '**', component: Page404Component}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,16 @@
+<table *ngIf="dataTodo">
+  <thead>
+    <tr>
+      <th>UserId</th>
+      <th>Title</th>
+      <th>Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{dataTodo.userId}}</td>
+      <td>{{dataTodo.title}}</td>
+      <td>{{dataTodo.completed}}</td>
+    </tr>
+  </tbody>
+</table>
