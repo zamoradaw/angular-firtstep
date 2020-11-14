@@ -1,1 +1,4 @@
-<app-cards [todo]="todo" *ngFor="let todo of todos"></app-cards>
+<div *ngIf="todos">
+  <app-cards [todo]="todo" *ngFor="let todo of filterTodos"></app-cards>
+  <app-pagination (elementView)="getElementPagination($event)" [countElement]="lengthTodo()"></app-pagination>
+</div>

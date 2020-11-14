@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CardsComponent } from '@shared/components/cards/cards.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
-    CardsComponent
+    CardsComponent,
+    PaginationComponent,
   ],
   imports: [
     CommonModule,
@@ -16,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   exports: [
     CardsComponent,
+    PaginationComponent,
+
     HttpClientModule,
     RouterModule
   ]
