@@ -1,6 +1,6 @@
 <div class="pagination-container">
   <p>Pagination</p>
-  <button (click)="movePagination('subtraction')"><<<</button>
+  <button class="nextInfo" (click)="movePagination('subtraction')"><<<</button>
   <button (click)="sendElement(data)" *ngFor="let data of filterTodos">{{data-9}}|{{data}}</button>
-  <button (click)="movePagination('plus')">>>></button>
+  <button class="nextInfo" (click)="movePagination('plus')">>>></button>
 </div>

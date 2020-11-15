@@ -1,9 +1,51 @@
-.welcome{
-  margin: 0;
-
+.carusel{
   height: 82.2vh;
-
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.carusel::before{
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .48);
+}
+
+.carusel-content{
+  text-align: center;
+  width: 100%;
+  align-self: stretch;
+  display: flex;
+  overflow: hidden;
+}
+
+.pokemon{
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 1s all ease-in;
+}
+
+.carusel-content-btn{
+  position: absolute;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carusel-content-btn > button{
+  cursor: pointer;
 }

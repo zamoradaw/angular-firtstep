@@ -1,2 +1,13 @@
-<p class="welcome">welcome works!</p>
+<div class="carusel">
+  <div class="carusel-content-btn">
+    <button (click)="setBack()">Back</button>
+    <button (click)="setNext()">Next</button>
+  </div>
+  <div class="carusel-content">
+    <ng-container *ngFor="let item of items">
+      <div class="pokemon" [ngStyle]="{'background-image': 'url('+item.url+')', 'margin-left':  item.marginLeft +'%'}">
+      </div>
+    </ng-container>
+  </div>
+</div>
 
