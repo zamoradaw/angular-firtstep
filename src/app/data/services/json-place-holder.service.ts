@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Todos } from '@data/interfaces/api/todos';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { JPH_TODOS } from '@data/constants/url-api';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class JsonPlaceHolderService {
     private http: HttpClient
   ){}
 
-  /*errorHttp(error: HttpErrorResponse){
+  errorHttp(error: HttpErrorResponse){
     let message: string = '';
     if(error.error instanceof ErrorEvent){
       message = error.error.message;
@@ -22,11 +23,12 @@ export class JsonPlaceHolderService {
       message = `Error code ${error.status}|Message: ${error.message}`
     }
 
-    return of({error: true, msg: message, data: null});
-  }*/
+    return throwError(message);
+  }
 
   getTodosAll(): Observable<Todos[]>{
-    return this.http.get<Todos[]>(this.urlEndPoint);
+    return this.http.get<Todos[]>(this.urlEndPoint)
+                    .pipe(catchError(this.errorHttp));
   }
 
   getTodosById(id: string): Observable<Todos>{

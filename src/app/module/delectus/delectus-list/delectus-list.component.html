@@ -1,4 +1,8 @@
-<div *ngIf="todos">
+<ng-container *ngIf="!errorResponse; else notElement">
   <app-cards [todo]="todo" *ngFor="let todo of filterTodos"></app-cards>
   <app-pagination (elementView)="getElementPagination($event)" [countElement]="lengthTodo()"></app-pagination>
-</div>
+</ng-container>
+
+<ng-template #notElement>
+  <h1>{{errorResponse}}</h1>
+</ng-template>

@@ -10,8 +10,9 @@ import { CardsComponent } from '@shared/components/cards/cards.component';
 })
 export class DelectusListComponent implements OnInit {
 
-  public todos: Array<Todos>;
-  public filterTodos: Array<Todos>;
+  public todos: Array<Todos> = [];
+  public filterTodos: Array<Todos> = [];
+  public errorResponse: string;
 
   constructor(
     private jph: JsonPlaceHolderService
@@ -23,9 +24,11 @@ export class DelectusListComponent implements OnInit {
 
   lengthTodo = () => this.todos.length;
 
-  saveTodos = () => this.jph.getTodosAll().subscribe(value => {
-                    this.todos = value
-                    this.filterTodos = value.slice(0,10)});
+  saveTodos = () => this.jph.getTodosAll().subscribe(
+                      value => {
+                        this.todos = value
+                        this.filterTodos = value.slice(0,10)},
+                      error => { this.errorResponse = error });
 
   paginationTodos(start: number, end: number): void{
     this.filterTodos = this.todos.slice(start, end);

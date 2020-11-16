@@ -1,0 +1,8 @@
+<ng-container *ngIf="viewConvert; else loader">
+  <app-money [priceDollarCurrent]="priceDollar"></app-money>
+  <button (click)="addValue()">Plus</button>
+</ng-container>
+
+<ng-template #loader>
+  <p class="">Loader.......</p>
+</ng-template>
