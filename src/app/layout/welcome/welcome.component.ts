@@ -13,15 +13,13 @@ export class WelcomeComponent implements OnInit {
 
   constructor() { }
 
-  savePokemon():void{
-    this.items.push({id: 0, url: URL_POKEMON1, marginLeft: 0})
-    this.items.push({id: 1, url: URL_POKEMON2})
-    this.items.push({id: 2, url: URL_POKEMON3})
-    this.items.push({id: 3, url: URL_POKEMON4})
-  }
-
   ngOnInit(): void {
     this.savePokemon();
+  }
+
+  setCurrentPosition(position: number):void{
+    this.currentPosition = position;
+    this.items.find(value => value.id === 0).marginLeft = -100 * position;
   }
 
   setNext(): void{
@@ -55,4 +53,12 @@ export class WelcomeComponent implements OnInit {
     this.items.find(value => value.id === 0).marginLeft = finalPercentage;
     this.currentPosition = position;
   }
+
+  savePokemon():void{
+    this.items.push({id: 0, name: 'Vulvasor', url: URL_POKEMON1, marginLeft: 0})
+    this.items.push({id: 1, name: 'Charmander', url: URL_POKEMON2})
+    this.items.push({id: 2, name: 'Scuartol', url: URL_POKEMON3})
+    this.items.push({id: 3, name: 'Methapod', url: URL_POKEMON4})
+  }
+
 }

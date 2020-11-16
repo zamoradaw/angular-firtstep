@@ -6,6 +6,8 @@
   <div class="carusel-content">
     <ng-container *ngFor="let item of items">
       <div class="pokemon" [ngStyle]="{'background-image': 'url('+item.url+')', 'margin-left':  item.marginLeft +'%'}">
+        <h1>Algunos:</h1>
+        <p>{{item.name}}</p>
       </div>
     </ng-container>
   </div>

@@ -14,7 +14,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, .48);
+  background: rgba(0, 0, 0, .40);
 }
 
 .carusel-content{
@@ -28,6 +28,7 @@
 .pokemon{
   float: left;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 100%;
@@ -36,6 +37,13 @@
   background-size: cover;
   background-position: center;
   transition: 1s all ease-in;
+}
+
+.pokemon > p{
+  color:white;
+  font-weight: 900;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
 .carusel-content-btn{
