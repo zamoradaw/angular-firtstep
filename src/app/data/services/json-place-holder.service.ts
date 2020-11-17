@@ -3,7 +3,7 @@ import { Todos } from '@data/interfaces/api/todos';
 import { Observable, throwError } from 'rxjs';
 import { JPH_TODOS } from '@data/constants/url-api';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
+import { catchError, delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +28,10 @@ export class JsonPlaceHolderService {
 
   getTodosAll(): Observable<Todos[]>{
     return this.http.get<Todos[]>(this.urlEndPoint)
-                    .pipe(catchError(this.errorHttp));
+                    .pipe(
+                      delay(1500),
+                      catchError(this.errorHttp)
+                    );
   }
 
   getTodosById(id: string): Observable<Todos>{
