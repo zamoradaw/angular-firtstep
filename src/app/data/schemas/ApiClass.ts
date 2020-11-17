@@ -1,10 +1,10 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { of } from 'rxjs';
+import { throwError } from 'rxjs';
 
 export class ApiClass{
 
   constructor(
-    protected http: HttpClient
+    private httpClient: HttpClient
   ){ }
 
   errorHttp(error: HttpErrorResponse){
@@ -15,6 +15,7 @@ export class ApiClass{
       message = `Error code ${error.status}|Message: ${error.message}`
     }
 
-    return of({error: true, msg: message, data: null});
+    return throwError(message);
   }
+
 }
